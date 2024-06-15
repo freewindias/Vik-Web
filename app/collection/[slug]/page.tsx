@@ -19,6 +19,8 @@ interface Params {
   }
 }
 
+export const revalidate = 30;
+
 
 const page = async ({ params }: Params) => {
   const data: simplifiedArt[] = await getArtByCollection(params.slug);

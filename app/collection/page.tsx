@@ -18,7 +18,7 @@ async function getAllCollection() {
     return data;
 }
 
-export const revalidate = 60;
+export const revalidate = 30;
 
 interface Params {
   params: {

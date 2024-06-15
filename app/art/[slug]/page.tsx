@@ -24,6 +24,8 @@ async function getArtPage(slug : string) {
   return data;
 }
 
+export const revalidate = 30;
+
 export default async function ArtPage({
   params,
 }: {

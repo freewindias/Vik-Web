@@ -12,6 +12,8 @@ async function getData() {
 return data;
 }
 
+export const revalidate = 30;
+
 export default async function Newest() {
   const data: simplifiedArt[] = await getData();
   return (

@@ -9,6 +9,8 @@ async function getData() {
     return data;
 }
 
+export const revalidate = 30;
+
 export default async function Hero() {
     const data = await getData()
 return (
