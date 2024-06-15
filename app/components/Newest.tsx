@@ -1,11 +1,17 @@
 import Link from "next/link";
 import { simplifiedArt } from "../interface";
 import { client } from "../lib/sanity";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 async function getData() {
-    const query = "*[_type == 'art' ][0...4] | order(_createdAt desc) {_id,title,'slug': slug.current,'collectionName': collection->title,'imageUrl': image.asset->url}";
+    const query = `*[_type == 'art' ][0...4] | order(_createdAt desc) 
+    {
+      _id,
+      title,
+      image,
+      'slug': slug.current,
+      'collectionName': collection->title,
+      }`;
 
     const data = await client.fetch(query);
 
@@ -28,7 +34,7 @@ export default async function Newest() {
               <div className="group relative">
                 <div className="aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-80">
                   <Image
-                    src={art.imageUrl}
+                    src={art.image}
                     alt="Product image"
                     className="w-full h-full object-cover object-center lg:h-full lg:w-full"
                     width={300}

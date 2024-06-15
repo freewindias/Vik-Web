@@ -30,8 +30,8 @@ export default{
         },
         {
             name: 'image',
-            title: 'Image of the art',
-            type: 'image'
+            title: 'Image URL',
+            type: 'string'
         },
         {
             name: 'content',

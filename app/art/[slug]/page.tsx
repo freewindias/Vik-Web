@@ -54,7 +54,7 @@ export default async function ArtPage({
 
       <div className="flex gap-8">
         <Image
-        src={urlFor(data.image).url()}
+        src={data.image}
         alt="art image"
         width={600}
         height={600}

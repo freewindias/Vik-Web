@@ -3,7 +3,7 @@ export interface simplifiedArt {
   _id: string;
   title: string;
   collectionName: string;
-  imageUrl: string;
+  image: string;
   slug: string  
 }
 

@@ -7,7 +7,14 @@ import { BackArrowIcon } from '@/app/components/Icons';
 
 
 async function getArtByCollection (collection : string) {
-  const query = `*[_type == "art" && references(*[_type == "collection" && slug.current == "${collection}" ]._id)]{_id,title,'slug': slug.current,'collectionName': collection->title,'imageUrl': image.asset->url}`;
+  const query = `*[_type == "art" && references(*[_type == "collection" && slug.current == "${collection}" ]._id)]
+  {
+    _id,
+    title,
+    image,
+    'slug': slug.current,
+    'collectionName': collection->title,
+  }`;
 
   const data = await client.fetch(query);
   return data;
@@ -42,7 +49,7 @@ const page = async ({ params }: Params) => {
                 <div className="aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-80">
                 
                 <Image
-                  src={art.imageUrl}
+                  src={art.image}
                   alt="Product image"
                   className="w-full h-full object-cover object-center lg:h-full lg:w-full"
                   width={300}
