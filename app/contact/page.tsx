@@ -8,29 +8,29 @@ const ContactPage = () => {
   const [error, setError] = useState(false);
   const text = "Say Hello";
 
-  const form = useRef<HTMLFormElement>(null);
+  const form = useRef();
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = (e) => {
     e.preventDefault();
     setError(false);
     setSuccess(false);
 
-    // emailjs
-    //   .sendForm(
-    //     process.env.NEXT_PUBLIC_SERVICE_ID,
-    //     process.env.NEXT_PUBLIC_TEMPLATE_ID,
-    //     form.current,
-    //     process.env.NEXT_PUBLIC_PUBLIC_KEY
-    //   )
-    //   .then(
-    //     () => {
-    //       setSuccess(true);
-    //       form.current?.reset();
-    //     },
-    //     () => {
-    //       setError(true);
-    //     }
-    //   );
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setSuccess(true);
+          form.current.reset();
+        },
+        () => {
+          setError(true);
+        }
+      );
   };
 
   return (
@@ -42,7 +42,7 @@ const ContactPage = () => {
     >
       <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
         {/* TEXT CONTAINER */}
-        <div className="lg:w-1/2 text-6xl flex items-center justify-center">
+        <div className=" lg:w-1/2 flex items-center justify-center text-6xl">
           <div>
             {text.split("").map((letter, index) => (
               <motion.span
@@ -65,7 +65,7 @@ const ContactPage = () => {
         <form
           onSubmit={sendEmail}
           ref={form}
-          className="h-1/2 lg:h-full lg:w-1/2 bg-gray-100 rounded-xl text-xl flex flex-col gap-8 justify-center p-24"
+          className="h-1/2 lg:h-full lg:w-1/2 bg-gray-200 rounded-xl text-xl flex flex-col gap-8 justify-center p-24"
         >
           <span>Dear Vikrant Belu,</span>
           <textarea
