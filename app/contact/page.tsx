@@ -8,24 +8,24 @@ const ContactPage = () => {
   const [error, setError] = useState(false);
   const text = "Say Hello";
 
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(false);
     setSuccess(false);
 
     emailjs
       .sendForm(
-        form.current,
-        process.env.NEXT_PUBLIC_SERVICE_ID,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        process.env.NEXT_PUBLIC_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID!,
+        e.currentTarget,
         process.env.NEXT_PUBLIC_PUBLIC_KEY
       )
       .then(
         () => {
           setSuccess(true);
-          form.current.reset();
+          e.currentTarget.reset();
         },
         () => {
           setError(true);
