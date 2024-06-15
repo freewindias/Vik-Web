@@ -37,7 +37,7 @@ export default function Navbar() {
             <div key={idx}>
               {pathname === link.href ? (
                 <Link
-                  className="text-lg font-semibold text-primary"
+                  className="text-sm font-medium hover:underline underline-offset-4"
                   href={link.href}
                 >
                   {link.name}

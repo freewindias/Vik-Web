@@ -8,5 +8,20 @@ export default{
             title: 'Hero Image',
             type: 'image',
         },
+        {
+            name: "heroUrl",
+            title: 'Hero url',
+            type : 'string',
+        },
+        {
+            name: 'content',
+            title: 'Description of the art',
+            type: 'array',
+            of: [
+                {
+                    type: 'block',
+                },
+            ],
+        },
     ],
 }

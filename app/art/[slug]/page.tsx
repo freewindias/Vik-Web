@@ -51,16 +51,19 @@ export default async function ArtPage({
           </span>
         </Link>
       </h1>
-      <Image
-      src={urlFor(data.image).url()}
-      alt="art image"
-      width={800}
-      height={800}
-      priority
-      className="rounded-lg mt-8 border"/>
 
-      <div className="mt-16 prose prose-blue prose-lg dark:prose-invert prose-li:marker:text-primary prose-a:text-primary">
-        <PortableText value={data.content}/>
+      <div className="flex gap-8">
+        <Image
+        src={urlFor(data.image).url()}
+        alt="art image"
+        width={600}
+        height={600}
+        priority
+        className="rounded-lg mt-8 border"/>
+
+        <div className="mt-16 prose prose-blue prose-lg dark:prose-invert prose-li:marker:text-primary prose-a:text-primary">
+          <PortableText value={data.content}/>
+        </div>
       </div>
 
     </div>

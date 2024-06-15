@@ -33,7 +33,7 @@ export default async function CollectionPage({ params }: Params) {
     <div>
       <Newest/>
       <h1 className="text-7xl text-center font-bold tracking-tight text-gray-500">Collection</h1>
-      {data?.length > 0 &&
+      {/* {data?.length > 0 &&
         data?.map((data) => (
           <div key={data?._id} >
             <div className="">
@@ -46,7 +46,7 @@ export default async function CollectionPage({ params }: Params) {
               </Link>
             </div>
           </div>
-        ))}
+        ))} */}
       
       <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 mt-5 gap-5">
         {data.map((collection, idx) => (
