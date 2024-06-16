@@ -9,6 +9,9 @@ export default function AboutPage() {
             <div className=" h-96 w-96">
                 <Brush/>
             </div>
+            <div>
+                
+            </div>
             
         </div>
     );
