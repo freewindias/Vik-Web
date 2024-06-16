@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build_path": "next build",
     "start": "next start",
+    "distDir": "build",
     "lint": "next lint"
   },
   "dependencies": {
