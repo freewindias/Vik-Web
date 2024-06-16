@@ -1,4 +1,4 @@
-import Brush from "../components/brush";
+import Brush from "../components/animated-gifs/brush";
 
 export const revalidate = 30;
 

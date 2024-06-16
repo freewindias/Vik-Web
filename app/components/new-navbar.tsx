@@ -27,19 +27,19 @@ import { usePathname } from "next/navigation";
 
 const links = [
   {
-    name: "home",
+    name: "Home",
     href: "/",
   },
   {
-    name: "about",
+    name: "About",
     href: "/about",
   },
   {
-    name: "collection",
+    name: "Collection",
     href: "/collection",
   },
   {
-    name: "contact",
+    name: "Contact",
     href: "/contact",
   },
 ];
