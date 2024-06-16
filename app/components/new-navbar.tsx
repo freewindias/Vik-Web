@@ -27,19 +27,19 @@ import { usePathname } from "next/navigation";
 
 const links = [
   {
-    name: "Home",
+    name: "home",
     href: "/",
   },
   {
-    name: "About",
+    name: "about",
     href: "/about",
   },
   {
-    name: "Collection",
+    name: "collection",
     href: "/collection",
   },
   {
-    name: "Contact",
+    name: "contact",
     href: "/contact",
   },
 ];
@@ -49,14 +49,14 @@ export function NewNavbar() {
   return (
     <header className="flex h-16 w-full items-center justify-between px-4 md:px-6">
       <Link className="flex items-center" href="/">
-      <h1 className="text-2xl md:text-4xl font-bold">V<span className="text-primary">B</span></h1>
+        <h1 className="text-2xl md:text-4xl font-bold">V<span className="text-primary">B</span></h1>
       </Link>
-      <nav className="hidden items-center gap-4 md:flex">
+      <nav className="hidden items-center gap-4 md:flex font-nav">
       {links.map((link, idx) => (
             <div key={idx}>
               {pathname === link.href ? (
                 <Link
-                  className="text-lg font-semibold text-primary"
+                  className="text-xl text-primary tracking-tight font-light"
                   href={link.href}
                 >
                   {link.name}
@@ -64,7 +64,7 @@ export function NewNavbar() {
               ) : (
                 <Link
                   href={link.href}
-                  className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-primary"
+                  className="text-xl text-gray-600 transition duration-100 hover:text-primary tracking-tight font-light"
                 >
                   {link.name}
                 </Link>

@@ -18,6 +18,13 @@ const config = {
       },
     },
     extend: {
+      fontFamily:{
+        'cap': ["Alegreya","serif"],
+        'nav': ["Poppins","sans-serif"],
+        'block': ["Krona One", "sans-serif"],
+        'mon': ["Montserrat", "sans-serif"],
+        'body': ['Verdana', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
