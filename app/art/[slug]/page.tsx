@@ -26,19 +26,26 @@ async function getArtPage(slug : string) {
 
 export const revalidate = 30;
 
+interface Params {
+  params: {
+    slug: string;
+  }
+}
+
+
+
+
 export default async function ArtPage({
   params,
-}: {
-  params: { slug: string };
-}) {
+}: Params){
   const data: artPage = await getArtPage(params.slug);
   return (
-    <div className="items-center"> 
+    <div className="items-center">
       <h1>
         <div className="flex items-center">
           <Link href="/collection">
             <div className="w-10 h-10 mr-2">
-              <BackArrowIcon/>
+              <BackArrowIcon />
             </div>
           </Link>
           <span className="block text-3xl leading-8 font-bold tracking-tight sm:text-4xl">
@@ -54,18 +61,18 @@ export default async function ArtPage({
 
       <div className="flex gap-8">
         <Image
-        src={data.image}
-        alt="art image"
-        width={600}
-        height={600}
-        priority
-        className="rounded-lg mt-8 border"/>
+          src={data.image}
+          alt="art image"
+          width={600}
+          height={600}
+          priority
+          className="rounded-lg mt-8 border"
+        />
 
         <div className="mt-16 prose prose-blue prose-lg dark:prose-invert prose-li:marker:text-primary prose-a:text-primary font-body">
-          <PortableText value={data.content}/>
+          <PortableText value={data.content} />
         </div>
       </div>
-
     </div>
   );
 }
