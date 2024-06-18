@@ -1,5 +1,4 @@
 export interface simplifiedArt {
-  map(arg0: (art: any) => import("react").JSX.Element): import("react").ReactNode | Iterable<import("react").ReactNode>;
   _id: string;
   title: string;
   collectionName: string;

@@ -61,7 +61,6 @@ export default async function CollectionPage({ params }: Params) {
           
         ))}
       </div>
-
     </div>
   );
 }

@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { BackArrowIcon } from '@/app/components/Icons';
 
 
-async function getArtByCollection (collection : string) {
+export async function getArtByCollection (collection : string) {
   const query = `*[_type == "art" && references(*[_type == "collection" && slug.current == "${collection}" ]._id)]
   {
     _id,

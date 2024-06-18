@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 
-async function getArtPage(slug : string) {
+export async function getArtPage(slug : string) {
   const query = `
   *[_type == "art" && slug.current == '${slug}']{
   "currentSlug": slug.current,
