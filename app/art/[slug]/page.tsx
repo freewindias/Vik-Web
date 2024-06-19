@@ -24,7 +24,7 @@ export async function getArtPage(slug : string) {
   return data;
 }
 
-export const revalidate = 30;
+export const revalidate = 10;
 
 interface Params {
   params: {
