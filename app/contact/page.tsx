@@ -19,13 +19,13 @@ const ContactPage = () => {
       .sendForm(
         process.env.NEXT_PUBLIC_SERVICE_ID!,
         process.env.NEXT_PUBLIC_TEMPLATE_ID!,
-        e.currentTarget,
-        process.env.NEXT_PUBLIC_PUBLIC_KEY
+        form.current!,
+        process.env.NEXT_PUBLIC_PUBLIC_KEY!
       )
       .then(
         () => {
           setSuccess(true);
-          e.currentTarget.reset();
+          form.current!.reset();
         },
         () => {
           setError(true);
@@ -42,7 +42,7 @@ const ContactPage = () => {
     >
       <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
         {/* TEXT CONTAINER */}
-        <div className=" lg:w-1/2 flex items-center justify-center text-6xl">
+        <div className="mb-2 lg:mr-4 flex items-center justify-center text-6xl">
           <div>
             {text.split("").map((letter, index) => (
               <motion.span
@@ -65,9 +65,9 @@ const ContactPage = () => {
         <form
           onSubmit={sendEmail}
           ref={form}
-          className="h-1/2 lg:h-full lg:w-1/2 bg-gray-200 rounded-xl text-xl flex flex-col gap-8 justify-center p-24 dark:text-black"
+          className="h-1/2 lg:h-full lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-24"
         >
-          <span>Dear Vikrant Belu,</span>
+          <span>Dear Lama Dev,</span>
           <textarea
             rows={6}
             className="bg-transparent border-b-2 border-b-black outline-none resize-none"
