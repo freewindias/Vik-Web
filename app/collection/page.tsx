@@ -29,10 +29,11 @@ interface Params {
 export default async function CollectionPage({ params }: Params) {
   const data: allcollection[] = await getAllCollection();
   return (
-    
     <div>
-      <Newest/>
-      <h1 className="text-7xl text-center font-bold tracking-tight text-gray-500">Collection</h1>
+      <Newest />
+      <h1 className="text-7xl text-center font-bold tracking-tight text-gray-500">
+        Collection
+      </h1>
       {/* {data?.length > 0 &&
         data?.map((data) => (
           <div key={data?._id} >
@@ -47,18 +48,19 @@ export default async function CollectionPage({ params }: Params) {
             </div>
           </div>
         ))} */}
-      
-      <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 mt-5 gap-5">
+
+      <div className="grid grid-cols-1 lg:grid-cols-4 mb-10 md:grid-cols-2 mt-5 gap-5">
         {data.map((collection, idx) => (
-          
-            <Card key={idx} className="">
-              <Link href={`/collection/${collection.slug.current}`}>
-                <CardContent className="mt-5 flex items-center justify-center h-80">
-                    <h3 className=" text-4xl line-clamp-2">{collection.title}</h3>                
-                </CardContent>
-              </Link>                
+          <Card key={idx} className="">
+            <Link href={`/collection/${collection.slug.current}`}>
+              <CardContent
+                className="mt-5 flex items-center justify-center h-80"
+                style={{ backgroundImage: `url(${collection.slug})` }}
+              >
+                <h3 className=" text-4xl line-clamp-2">{collection.title}</h3>
+              </CardContent>
+            </Link>
           </Card>
-          
         ))}
       </div>
     </div>
