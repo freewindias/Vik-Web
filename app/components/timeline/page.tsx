@@ -1,7 +1,7 @@
 // components/Timeline.js
 
 import React from "react";
-import styles from "./timeline.module.css";
+import styles from "./Timeline.module.css";
 
 interface Event {
   image: string;
@@ -20,7 +20,13 @@ const Timeline = ({ events }: { events: Event[] }) => {
           className={`${styles.container} ${index % 2 == 0 ? styles.left : styles.right}`}
         >
           <div className={styles.content}>
-            <img src={event.image} alt={event.title} className={styles.image} />
+            <Image
+              width={640}
+              height={480}
+              src={event.image}
+              alt={event.title}
+              className={styles.image}
+            />
             <h2 className={styles.title}>{event.title}</h2>
             <p className={styles.description}>{event.description}</p>
             <p className={styles.location}>{event.location}</p>

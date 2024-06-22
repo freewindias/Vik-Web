@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const WhatsAppButton = ({
   phoneNumber,
@@ -18,10 +19,11 @@ const WhatsAppButton = ({
         display: "inline-flex",
       }}
     >
-      <img
+      <Image
         src="/whatsapp-icon.svg" // Add an appropriate WhatsApp icon image in the public folder
         alt="WhatsApp"
-        style={{ width: "48px", height: "48px" }}
+        width={48}
+        height={48}
       />
     </a>
   );
