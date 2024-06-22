@@ -1,7 +1,7 @@
 // components/Timeline.js
 
 import React from "react";
-import styles from "./Timeline.module.css";
+import styles from "./timeline.module.css";
 import Image from "next/image";
 
 interface Event {
