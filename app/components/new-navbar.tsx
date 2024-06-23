@@ -19,7 +19,6 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 "use client"
 import React, { useContext, useEffect, useState } from "react";
-import { ThemeContext } from "./themecontext";
 import { Button } from "@/components/ui/button";
 import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet";
 import { ModeToggle } from "./modeToggle";
