@@ -1,6 +1,6 @@
 import Hero from "../components/Hero";
 import Brush from "../components/animated-gifs/brush";
-import Timeline from "../components/timeline/page";
+
 
 export const revalidate = 30;
 // const events = [

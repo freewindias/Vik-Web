@@ -85,7 +85,7 @@ export default async function ArtPage({ params }: Params) {
               <MailOpenIcon />
             </a>
             /
-            <span className="w-7 h-7 -mt-3">
+            <span className="w-7 h-7 -mt-1">
               <WhatsAppButton phoneNumber="+919157179157" message={fullName} />
             </span>
           </div>
